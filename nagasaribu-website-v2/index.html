@@ -142,14 +142,18 @@ footer{background:#040a15;color:#8fa1b8;padding:56px 0 30px;font-size:13.5px}.fg
 
 <section id="contact" style="background:#fff;border-top:1px solid var(--line)"><div class="wrap reveal">
 <div class="eyebrow">CONTACT • MALAYSIA & INDONESIA</div><h2 class="title serif">Business Enquiry.</h2>
-<form class="premium" onsubmit="event.preventDefault();alert('Terima kasih! Kami akan balas via email.')">
-<div><label>FULL NAME *</label><input required placeholder="Nama penuh"></div>
-<div><label>COMPANY *</label><input required placeholder="Syarikat"></div>
-<div><label>EMAIL *</label><input type="email" required placeholder="email@syarikat.com"></div>
-<div><label>COUNTRY</label><select><option>Malaysia</option><option>Indonesia</option><option>Singapore</option><option>Other</option></select></div>
-<div><label>SERVICE AREA</label><select><option>Contracting</option><option>Supply</option><option>Workforce</option><option>Business Consultancy</option><option>Marketing</option><option>Digital & AI</option><option>Membership</option><option>Partnership</option></select></div>
-<div class="full"><label>DETAILS *</label><textarea rows="4" required placeholder="Ceritakan keperluan..."></textarea></div>
-<div class="full"><button class="btn btn-blue" type="submit">SUBMIT ENQUIRY →</button></div>
+<form id="enquiryForm" class="premium" action="https://formsubmit.co/ajax/sales@nagasaribu.online" method="POST">
+<input type="hidden" name="_subject" value="New Business Enquiry — nagasaribu.online">
+<input type="hidden" name="_template" value="table">
+<input type="text" name="_honey" style="display:none">
+<div><label>FULL NAME *</label><input name="name" required placeholder="Nama penuh"></div>
+<div><label>COMPANY *</label><input name="company" required placeholder="Syarikat"></div>
+<div><label>EMAIL *</label><input name="email" type="email" required placeholder="email@syarikat.com"></div>
+<div><label>COUNTRY</label><select name="country"><option>Malaysia</option><option>Indonesia</option><option>Singapore</option><option>Other</option></select></div>
+<div><label>SERVICE AREA</label><select name="service"><option>Contracting</option><option>Supply</option><option>Workforce</option><option>Business Consultancy</option><option>Marketing</option><option>Digital & AI</option><option>Membership</option><option>Partnership</option></select></div>
+<div class="full"><label>DETAILS *</label><textarea name="message" rows="4" required placeholder="Ceritakan keperluan..."></textarea></div>
+<div class="full"><button id="enquiryBtn" class="btn btn-blue" type="submit">SUBMIT ENQUIRY →</button>
+<p id="enquiryStatus" style="font-size:13px;margin-top:10px"></p></div>
 </form></div></section>
 
 <footer><div class="wrap fgrid">
@@ -161,6 +165,20 @@ footer{background:#040a15;color:#8fa1b8;padding:56px 0 30px;font-size:13.5px}.fg
 <script>
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.getElementById('enquiryForm').addEventListener('submit',async function(e){
+e.preventDefault();
+const btn=document.getElementById('enquiryBtn'),st=document.getElementById('enquiryStatus');
+btn.disabled=true;btn.textContent='SENDING...';st.textContent='';
+try{
+const res=await fetch(this.action,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(this)))});
+if(!res.ok)throw new Error('send failed');
+st.style.color='green';st.textContent='Terima kasih! Enquiry anda telah dihantar ke sales@nagasaribu.online. Kami akan balas via email.';
+this.reset();
+}catch(err){
+st.style.color='#b00';st.textContent='Hantaran gagal. Sila email terus ke sales@nagasaribu.online';
+}
+btn.disabled=false;btn.textContent='SUBMIT ENQUIRY →';
+});
 </script>
 </body>
 </html>
