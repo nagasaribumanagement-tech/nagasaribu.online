@@ -25,7 +25,7 @@
 <link rel="preload" as="image" href="assets/logo-nb-icon-440-alpha.webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"NAGASARIBU","url":"https://nagasaribu.online/","logo":"https://nagasaribu.online/assets/logo-nb.png","slogan":"Connecting Business. Creating Opportunities.","email":"sales@nagasaribu.online","address":{"@type":"PostalAddress","streetAddress":"No. 2-105, Jalan Prima SG 3/2, Batu Caves","addressLocality":"Selangor","addressCountry":"MY"},"areaServed":["MY","ID","International"],"contactPoint":{"@type":"ContactPoint","email":"sales@nagasaribu.online","contactType":"sales","areaServed":["MY","ID"]},"subOrganization":[{"@type":"Organization","name":"NAGASARIBU MANAGEMENT","url":"https://nagasaribu.online/management","description":"Contracting, supply, workforce & technical solutions."},{"@type":"Organization","name":"NAGASARIBU CONSULTANCY","url":"https://nagasaribu.online/consultancy","description":"Business, marketing & digital consultancy."},{"@type":"Organization","name":"NAGASARIBU ASSOCIATION","url":"https://nagasaribu.online/association","description":"Business community — networking, connections & partnerships."}]}
+{"@context":"https://schema.org","@type":"Organization","name":"NAGASARIBU","url":"https://nagasaribu.online/","logo":"https://nagasaribu.online/assets/logo-nb.png","slogan":"Connecting Business. Creating Opportunities.","email":"sales@nagasaribu.online","address":{"@type":"PostalAddress","streetAddress":"No. 2-105, Jalan Prima SG 3/2, Batu Caves","addressLocality":"Selangor","addressCountry":"MY"},"areaServed":["MY","ID","International"],"contactPoint":{"@type":"ContactPoint","email":"sales@nagasaribu.online","contactType":"sales","areaServed":["MY","ID"]},"founder":{"@type":"Person","name":"Hermawan Harahap Sabarudin","jobTitle":"Founder, NAGASARIBU"},"subOrganization":[{"@type":"Organization","name":"NAGASARIBU MANAGEMENT","url":"https://nagasaribu.online/management","description":"Contracting, supply, workforce & technical solutions."},{"@type":"Organization","name":"NAGASARIBU CONSULTANCY","url":"https://nagasaribu.online/consultancy","description":"Business, marketing & digital consultancy."},{"@type":"Organization","name":"NAGASARIBU ASSOCIATION","url":"https://nagasaribu.online/association","description":"Business community — networking, connections & partnerships."}]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is NAGASARIBU a registered group or holding company?","acceptedAnswer":{"@type":"Answer","text":"No. Each entity operates under the NAGASARIBU brand in its own capacity — not a registered group or holding structure."}},{"@type":"Question","name":"Which markets does NAGASARIBU serve?","acceptedAnswer":{"@type":"Answer","text":"Malaysia, Indonesia and selected international markets."}},{"@type":"Question","name":"How much are consultation and membership?","acceptedAnswer":{"@type":"Answer","text":"Consultation is RM100 per session and Association membership is RM300 per year."}},{"@type":"Question","name":"How do payments work?","acceptedAnswer":{"@type":"Answer","text":"Consultation and membership are arranged via Stripe checkout after enquiry. No card details are stored on this website. Selected cross-border collections are supported via WorldFirst."}}]}
@@ -102,13 +102,24 @@ table{width:100%;border-collapse:collapse;margin-top:18px;background:#fff;border
 .member:after{content:"";position:absolute;inset:-40% -20% auto auto;width:380px;height:380px;background:radial-gradient(circle,rgba(244,201,93,.35),transparent 65%)}
 .member img.mlogo{width:56px;height:56px;border-radius:14px;border:1px solid var(--gold2);object-fit:contain;background:#0b1b33;padding:3px}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}.steps div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}.steps b{display:block;margin:8px 0 4px}.steps p{font-size:13.5px;color:var(--mut)}
+.founder-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center;margin-top:26px}
+.founder-photo{margin:0;position:relative}
+.founder-photo img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:top center;border-radius:22px;border:1px solid rgba(217,164,65,.55);box-shadow:0 30px 70px rgba(0,0,0,.5);display:block;background:#0b1b33}
+.founder-photo figcaption{margin-top:12px;font-size:12.5px;color:#c3d2e2;text-align:center;letter-spacing:.4px}
+.founder-badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.founder-badges span{font-size:11px;font-weight:800;letter-spacing:1.2px;color:var(--gold2);border:1px solid rgba(217,164,65,.45);background:rgba(217,164,65,.1);border-radius:999px;padding:7px 14px}
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}
+.cert-card{background:#fff;border:1px solid var(--line);border-radius:var(--rad);padding:18px;box-shadow:0 8px 30px rgba(16,24,40,.06);display:flex;flex-direction:column}
+.cert-card img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;object-position:top center;border-radius:10px;border:1px solid var(--line);background:#fff}
+.cert-card h3{font-size:16px;margin:14px 0 4px}.cert-card p{font-size:13.5px;color:var(--mut)}
+.cert-meta{margin-top:10px;font-size:12.5px;color:#33445c;font-weight:600}
 .faq details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-top:12px}.faq summary{font-weight:800;cursor:pointer;min-height:32px}.faq p{color:var(--mut);font-size:14.5px;margin-top:8px}
 .reveal{opacity:0;transform:translateY(18px);transition:.7s}.reveal.on{opacity:1;transform:none}
 form.premium{display:grid;grid-template-columns:1fr 1fr;gap:14px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:var(--sh);margin-top:22px}
 label{font-size:11px;font-weight:800;letter-spacing:1px;color:#33445c}input,select,textarea{width:100%;padding:13px 14px;min-height:48px;border:1.5px solid #cfc8b2;border-radius:12px;font-size:14px;background:#fffdf7;margin-top:6px;font-family:inherit}input:focus,select:focus,textarea:focus{outline:0;border-color:var(--gold);box-shadow:0 0 0 3px rgba(217,164,65,.25)}
 .full{grid-column:1/-1}
 footer{background:#040a15;color:#a9bccf;padding:56px 0 30px;font-size:13.5px}footer a{display:inline-block;padding:6px 0;min-height:32px}footer a:hover{color:#fff}.fgrid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:24px}.fgrid b{color:#fff;letter-spacing:1px;font-size:12px}
-@media(max-width:920px){.hero-grid,.grid3,.grid2,.fgrid,.steps{grid-template-columns:1fr}.links{display:none}.svc{grid-template-columns:1fr 1fr}form.premium{grid-template-columns:1fr}header{position:sticky}.nav-cta{padding:10px 16px}.logo-panel{max-width:100%;padding:26px 20px}}
+@media(max-width:920px){.hero-grid,.grid3,.grid2,.fgrid,.steps,.founder-grid,.cert-grid{grid-template-columns:1fr}.links{display:none}.svc{grid-template-columns:1fr 1fr}form.premium{grid-template-columns:1fr}header{position:sticky}.nav-cta{padding:10px 16px}.logo-panel{max-width:100%;padding:26px 20px}.founder-photo img{aspect-ratio:4/4.6;max-height:560px}}
 @media(max-width:520px){.hero{padding:120px 0 64px}.hero h1{font-size:clamp(30px,9vw,40px)}.stats{grid-template-columns:1fr;gap:10px}.stats>div{border-left:2px solid rgba(217,164,65,.5);padding-left:12px}.logo-item{padding:9px 12px 9px 9px;gap:11px}.logo-item img{width:40px;height:40px;flex:0 0 40px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*{transition:none!important}}
 </style>
@@ -117,7 +128,7 @@ footer{background:#040a15;color:#a9bccf;padding:56px 0 30px;font-size:13.5px}foo
 <a class="skip" href="#main">Skip to main content</a>
 <header><div class="nav">
 <a class="brand" href="#top"><img src="assets/logo-nb-icon-96-alpha.webp" width="48" height="48" alt=""><span><b>NAGASARIBU</b><small>BUSINESS ECOSYSTEM</small></span></a>
-<nav class="links" aria-label="Primary"><a href="#about">About</a><a href="#businesses">Businesses</a><a href="#finance">Finance</a><a href="#products">Products</a><a href="#contact">Contact</a></nav>
+<nav class="links" aria-label="Primary"><a href="#about">About</a><a href="#founder">Founder</a><a href="#businesses">Businesses</a><a href="#finance">Finance</a><a href="#products">Products</a><a href="#contact">Contact</a></nav>
 <a class="btn btn-blue nav-cta" style="padding:10px 18px" href="#contact">BUSINESS ENQUIRY</a>
 </div></header>
 
@@ -155,6 +166,27 @@ footer{background:#040a15;color:#a9bccf;padding:56px 0 30px;font-size:13.5px}foo
 <div class="card"><div class="pill">PEOPLE</div><h3>Empower People</h3><p>Workforce, training, community & leadership development across MY & ID.</p></div>
 <div class="card"><div class="pill">SOLUTIONS</div><h3>Provide Solutions</h3><p>Contracting, supply, technical, marketing, digital & technology consultancy.</p></div>
 <div class="card"><div class="pill">OPPORTUNITIES</div><h3>Create Opportunities</h3><p>Cross-border connectivity, partnerships, platforms & business growth.</p></div>
+</div></div></section>
+
+<section id="founder" class="dark" aria-labelledby="founder-title"><div class="wrap reveal">
+<div class="eyebrow light">FOUNDER • NAGASARIBU</div><h2 class="title serif" id="founder-title">Led by the Founder.</h2>
+<div class="founder-grid">
+<figure class="founder-photo"><img src="assets/founder-800.webp" width="800" height="1000" alt="Hermawan Harahap Sabarudin, Founder of NAGASARIBU" loading="lazy" decoding="async"><figcaption>Founder, NAGASARIBU</figcaption></figure>
+<div>
+<h3 style="font-size:26px">Hermawan Harahap Sabarudin</h3>
+<p class="lead" style="margin-top:10px">Founder of NAGASARIBU — leading the Management, Consultancy & Association ecosystem across Malaysia, Indonesia & international markets, with certified capability in digital marketing, Google Ads and social media advertising.</p>
+<div class="founder-badges"><span>GOOGLE ADS SEARCH CERTIFIED</span><span>FACEBOOK MARKETING & ADVERTISING</span><span>DIGITAL MARKETING ASSOCIATE</span></div>
+<div class="cta" style="margin-top:22px"><a class="btn btn-gold" href="#contact" data-service="Business Consultancy">WORK WITH US →</a></div>
+</div>
+</div></div></section>
+
+<section id="certifications" aria-labelledby="cert-title"><div class="wrap reveal">
+<div class="eyebrow">CERTIFICATIONS • CREDENTIALS</div><h2 class="title serif" id="cert-title">Certified Capability.</h2>
+<p class="lead">Professional certifications held by the founder — supporting the consultancy services offered by NAGASARIBU.</p>
+<div class="cert-grid">
+<div class="cert-card"><img src="assets/cert-google-ads-1200.webp" width="1200" height="800" alt="Google Ads Search Certification awarded to Hermawan Harahap Sabarudin" loading="lazy" decoding="async"><h3>Google Ads Search Certification</h3><p>Issued by Google. Certificate ID: 193373184.</p><div class="cert-meta">Issued Sep 2026 • Valid until Sep 2027</div></div>
+<div class="cert-card"><img src="assets/cert-facebook-ads-1200.webp" width="1200" height="800" alt="Certificate of Completion in Facebook Marketing and Advertising awarded to Hermawan Harahap" loading="lazy" decoding="async"><h3>Facebook Marketing & Advertising</h3><p>Certificate of Completion by Simplilearn | SkillUP.</p><div class="cert-meta">Completed Sep 2026</div></div>
+<div class="cert-card"><img src="assets/cert-digital-marketing-1200.webp" width="1200" height="800" alt="Certificate of Achievement as Digital Marketing Certified Associate awarded to Hermawan Harahap" loading="lazy" decoding="async"><h3>Digital Marketing Certified Associate</h3><p>Certificate of Achievement by Simplilearn.</p><div class="cert-meta">Completed Sep 2026</div></div>
 </div></div></section>
 
 <section id="businesses" aria-labelledby="businesses-title" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap">
@@ -232,7 +264,7 @@ footer{background:#040a15;color:#a9bccf;padding:56px 0 30px;font-size:13.5px}foo
 <footer><div class="wrap fgrid">
 <div><div class="brand"><img src="assets/logo-nb-icon-96-alpha.webp" width="52" height="52" alt="" loading="lazy" decoding="async"><span><b style="color:#fff">NAGASARIBU</b><small>BUSINESS ECOSYSTEM</small></span></div><p style="margin-top:12px">Connecting business. Creating opportunities — MY • ID • International.<br>© 2026 NAGASARIBU • BERUSAHA FISABILILLAH, BERJAYA BIIZNILLAH</p></div>
 <nav aria-label="Businesses"><b>BUSINESSES</b><br><br><a href="management">Management</a><br><a href="consultancy">Consultancy</a><br><a href="association">Association</a></nav>
-<nav aria-label="Site links"><b>LINKS</b><br><br><a href="#about">About</a><br><a href="#products">Products</a><br><a href="#contact">Contact</a></nav>
+<nav aria-label="Site links"><b>LINKS</b><br><br><a href="#about">About</a><br><a href="#founder">Founder</a><br><a href="#products">Products</a><br><a href="#contact">Contact</a></nav>
 <div><b>CONTACT</b><br><br><a href="mailto:sales@nagasaribu.online">sales@nagasaribu.online</a><br>nagasaribu.online</div>
 </div></footer>
 <script>
