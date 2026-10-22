@@ -57,20 +57,24 @@ header{position:fixed;inset:0 0 auto 0;z-index:60;backdrop-filter:blur(16px);bac
 .hero p.sub{color:#d5dfee;max-width:620px;font-size:16px}
 .cta{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
 .stats{display:flex;gap:26px;margin-top:30px;flex-wrap:wrap}.stats b{font-size:24px;display:block}.stats span{font-size:12px;color:#c3d0e0;letter-spacing:1px}
-.hero-visual{position:relative;display:flex;justify-content:center}
-.glow{position:absolute;width:420px;height:420px;background:radial-gradient(circle,rgba(217,164,65,.35),transparent 65%);filter:blur(10px)}
-.main-logo{width:min(360px,80vw);aspect-ratio:1;border-radius:32px;object-fit:cover;border:1px solid rgba(217,164,65,.5);box-shadow:var(--sh);position:relative;z-index:2}
-.float-card{position:absolute;z-index:3;background:rgba(255,255,255,.95);color:#111;border-radius:14px;padding:10px 14px;font-size:12px;font-weight:700;box-shadow:var(--sh);display:flex;gap:10px;align-items:center;backdrop-filter:blur(8px)}
-.float-card img{width:34px;height:34px;border-radius:50%;object-fit:cover}.fc1{top:8%;left:-4%}.fc2{bottom:12%;right:-2%}.fc3{bottom:-8px;left:12%}
+.hero-visual{position:relative;display:flex;flex-direction:column;align-items:center;gap:18px}
+.logo-stage{position:relative;display:flex;justify-content:center;width:100%}
+.glow{position:absolute;width:420px;max-width:100%;height:420px;background:radial-gradient(circle,rgba(217,164,65,.35),transparent 65%);filter:blur(10px);top:50%;left:50%;transform:translate(-50%,-50%)}
+.main-logo{width:min(340px,78vw);aspect-ratio:1;border-radius:28px;object-fit:cover;border:1px solid rgba(217,164,65,.5);box-shadow:var(--sh);position:relative;z-index:2;background:#000}
+.hero-chips{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;position:relative;z-index:3}
+.chip-card{background:rgba(255,255,255,.96);color:#111;border-radius:14px;padding:7px 14px 7px 7px;font-size:12px;font-weight:700;box-shadow:var(--sh);display:inline-flex;gap:10px;align-items:center;backdrop-filter:blur(8px);white-space:nowrap}
+.chip-card img{width:38px;height:38px;border-radius:10px;object-fit:contain;background:#0b1b33;padding:2px}
 .hero-strip{margin-top:56px;border-top:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);backdrop-filter:blur(10px)}
 .hero-strip .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
-.hcell{padding:20px 22px;display:flex;gap:14px;align-items:center;border-right:1px solid rgba(255,255,255,.1)}.hcell:last-child{border:0}.hcell img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:1px solid var(--gold)}.hcell b{display:block;font-size:13px;letter-spacing:1.2px}.hcell span{font-size:12px;color:#c3d0e0}
+.hcell{padding:20px 22px;display:flex;gap:14px;align-items:center;border-right:1px solid rgba(255,255,255,.1);min-height:88px}.hcell:last-child{border:0}.hcell img{width:56px;height:56px;flex:0 0 56px;border-radius:14px;object-fit:contain;object-position:center;background:#0b1b33;border:1px solid var(--gold);padding:3px}.hcell b{display:block;font-size:13px;letter-spacing:1.2px}.hcell span{font-size:12px;color:#c3d0e0}
 /* SECTIONS */
 section{padding:84px 0}.eyebrow{font-size:11px;letter-spacing:3px;font-weight:800;color:var(--gold3)}.eyebrow.light{color:var(--gold2)}
 .title{font-size:clamp(28px,4vw,44px);line-height:1.12;margin:10px 0 12px}.lead{color:var(--mut);max-width:840px}.dark{background:linear-gradient(180deg,#070f1e,#0e2240);color:#eaf0f7}.dark .lead{color:#c3d2e2}
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:26px;box-shadow:0 8px 30px rgba(16,24,40,.06);transition:.3s;position:relative;overflow:hidden}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:26px;box-shadow:0 8px 30px rgba(16,24,40,.06);transition:.3s;position:relative;overflow:hidden;display:flex;flex-direction:column}
 .card:hover{transform:translateY(-4px);box-shadow:var(--sh)}
+.emblem{height:172px;display:flex;align-items:center;justify-content:center;background:radial-gradient(300px 150px at 50% 30%,rgba(217,164,65,.18),transparent),linear-gradient(180deg,#0a1830,#050b16);border:1px solid #1a2c4d;border-radius:12px;margin-bottom:16px;padding:20px}
+.emblem img{height:132px;width:100%;max-width:220px;object-fit:contain;object-position:center;background:transparent;filter:drop-shadow(0 8px 20px rgba(0,0,0,.5))}
 .card .top-img{width:100%;height:190px;object-fit:contain;background:#050b16;padding:14px;border-radius:12px;margin-bottom:16px;border:1px solid #111}
 .pill{display:inline-block;font-size:11px;font-weight:800;letter-spacing:1.5px;color:var(--gold3);background:#faf1da;border:1px solid #ecd9a8;padding:6px 12px;border-radius:999px;margin-bottom:12px}
 .dark .card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12);color:#eaf0f7;box-shadow:none}.dark .card p{color:#c3d2e2}
@@ -86,7 +90,7 @@ table{width:100%;border-collapse:collapse;margin-top:18px;background:#fff;border
 .sample-chip{display:inline-block;font-size:11px;font-weight:800;letter-spacing:1.5px;background:#b91c1c;color:#fff;padding:6px 12px;border-radius:999px;margin-bottom:10px}
 .member{background:linear-gradient(135deg,#0a1830,#1d3d6e 60%,#6b4d14);color:#fff;border-radius:20px;padding:28px;border:1px solid var(--gold);position:relative;overflow:hidden}
 .member:after{content:"";position:absolute;inset:-40% -20% auto auto;width:380px;height:380px;background:radial-gradient(circle,rgba(244,201,93,.35),transparent 65%)}
-.member img.mlogo{width:56px;height:56px;border-radius:50%;border:1px solid var(--gold2);object-fit:cover}
+.member img.mlogo{width:56px;height:56px;border-radius:14px;border:1px solid var(--gold2);object-fit:contain;background:#0b1b33;padding:3px}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}.steps div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}.steps b{display:block;margin:8px 0 4px}.steps p{font-size:13.5px;color:var(--mut)}
 .faq details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-top:12px}.faq summary{font-weight:800;cursor:pointer;min-height:32px}.faq p{color:var(--mut);font-size:14.5px;margin-top:8px}
 .reveal{opacity:0;transform:translateY(18px);transition:.7s}.reveal.on{opacity:1;transform:none}
@@ -115,17 +119,20 @@ footer{background:#040a15;color:#a9bccf;padding:56px 0 30px;font-size:13.5px}foo
 <div class="cta"><a class="btn btn-blue" href="#contact">BUSINESS ENQUIRY →</a><a class="btn btn-ghost" href="#businesses">EXPLORE OUR BUSINESSES</a></div>
 <div class="stats"><div><b>3</b><span>ENTITIES • ONE ECOSYSTEM</span></div><div><b>MY • ID</b><span>REGIONAL PRESENCE</span></div><div><b>4</b><span>CURRENCIES • VIA WORLDFIRST</span></div></div>
 </div>
-<div class="hero-visual"><div class="glow" aria-hidden="true"></div>
+<div class="hero-visual"><div class="logo-stage"><div class="glow" aria-hidden="true"></div>
 <img class="main-logo" src="assets/logo-nb-hero.webp" width="400" height="400" alt="NAGASARIBU logo" fetchpriority="high">
-<div class="float-card fc1"><img src="assets/nagasaribu-management-icon-128.webp" width="34" height="34" alt="" aria-hidden="true"> Management • Workforce</div>
-<div class="float-card fc2"><img src="assets/nagasaribu-consultancy-icon-128.webp" width="34" height="34" alt="" aria-hidden="true"> Consultancy • Growth</div>
-<div class="float-card fc3"><img src="assets/nagasaribu-association-icon-128.webp" width="34" height="34" alt="" aria-hidden="true"> Association • Community</div>
+</div>
+<div class="hero-chips">
+<div class="chip-card"><img src="assets/nagasaribu-management-icon-128.webp" width="32" height="32" alt="" aria-hidden="true"> Management • Workforce</div>
+<div class="chip-card"><img src="assets/nagasaribu-consultancy-icon-128.webp" width="32" height="32" alt="" aria-hidden="true"> Consultancy • Growth</div>
+<div class="chip-card"><img src="assets/nagasaribu-association-icon-128.webp" width="32" height="32" alt="" aria-hidden="true"> Association • Community</div>
+</div>
 </div>
 </div>
 <div class="hero-strip"><div class="wrap">
-<div class="hcell"><img src="assets/nagasaribu-management-640.webp" width="48" height="48" alt="NAGASARIBU MANAGEMENT logo" loading="lazy" decoding="async"><div><b>MANAGEMENT</b><span>Contracting • Supply • Workforce</span></div></div>
-<div class="hcell"><img src="assets/nagasaribu-consultancy-640.webp" width="48" height="48" alt="NAGASARIBU CONSULTANCY logo" loading="lazy" decoding="async"><div><b>CONSULTANCY</b><span>Marketing | Consulting | Growth</span></div></div>
-<div class="hcell"><img src="assets/nagasaribu-associations-640.webp" width="48" height="48" alt="NAGASARIBU ASSOCIATION logo" loading="lazy" decoding="async"><div><b>ASSOCIATION</b><span>Networking • Partnership</span></div></div>
+<div class="hcell"><img src="assets/nagasaribu-management-icon-128.webp" width="52" height="52" alt="" aria-hidden="true"><div><b>MANAGEMENT</b><span>Contracting • Supply • Workforce</span></div></div>
+<div class="hcell"><img src="assets/nagasaribu-consultancy-icon-128.webp" width="52" height="52" alt="" aria-hidden="true"><div><b>CONSULTANCY</b><span>Marketing | Consulting | Growth</span></div></div>
+<div class="hcell"><img src="assets/nagasaribu-association-icon-128.webp" width="52" height="52" alt="" aria-hidden="true"><div><b>ASSOCIATION</b><span>Networking • Partnership</span></div></div>
 </div></div>
 </div>
 
@@ -141,19 +148,19 @@ footer{background:#040a15;color:#a9bccf;padding:56px 0 30px;font-size:13.5px}foo
 <section id="businesses" aria-labelledby="businesses-title" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap">
 <div class="eyebrow">OUR BUSINESSES</div><h2 class="title serif reveal" id="businesses-title">Three Entities. One Ecosystem.</h2>
 <div class="grid3" style="margin-top:24px">
-<div class="card reveal"><img class="top-img" src="assets/nagasaribu-management-640.webp" width="400" height="400" alt="NAGASARIBU MANAGEMENT logo" loading="lazy" decoding="async"><div class="pill">CONTRACTING • SUPPLY • WORKFORCE</div><h3>NAGASARIBU MANAGEMENT</h3><p>Construction, supply, workforce & technical solutions.</p><div class="svc" style="grid-template-columns:1fr 1fr">
+<div class="card reveal"><div class="emblem"><img src="assets/nagasaribu-management-icon-440.webp" width="220" height="132" alt="NAGASARIBU MANAGEMENT emblem" loading="lazy" decoding="async"></div><div class="pill">CONTRACTING • SUPPLY • WORKFORCE</div><h3>NAGASARIBU MANAGEMENT</h3><p>Construction, supply, workforce & technical solutions.</p><div class="svc" style="grid-template-columns:1fr 1fr">
 <div><div class="num">01</div><b>Contracting</b><p>Building, renovation, civil works</p></div>
 <div><div class="num">02</div><b>Supply</b><p>Materials, hardware, equipment</p></div>
 <div><div class="num">03</div><b>Workforce</b><p>Manpower supply & management</p></div>
 <div><div class="num">04</div><b>Technical</b><p>Electrical, plumbing, HVAC</p></div>
 </div><p style="margin-top:12px;font-size:12.5px">📍 No. 2–105, Jalan Prima SG 3/2, Batu Caves, Selangor</p><a class="learnmore" href="management">More on Management →</a></div>
-<div class="card reveal"><img class="top-img" src="assets/nagasaribu-consultancy-640.webp" width="400" height="400" alt="NAGASARIBU CONSULTANCY logo" loading="lazy" decoding="async"><div class="pill">STRATEGY • SOLUTION • SUCCESS</div><h3>NAGASARIBU CONSULTANCY</h3><p>Business, marketing & digital consultancy for growth & expansion.</p><div class="svc" style="grid-template-columns:1fr 1fr">
+<div class="card reveal"><div class="emblem"><img src="assets/nagasaribu-consultancy-icon-440.webp" width="220" height="132" alt="NAGASARIBU CONSULTANCY emblem" loading="lazy" decoding="async"></div><div class="pill">STRATEGY • SOLUTION • SUCCESS</div><h3>NAGASARIBU CONSULTANCY</h3><p>Business, marketing & digital consultancy for growth & expansion.</p><div class="svc" style="grid-template-columns:1fr 1fr">
 <div><div class="num">01</div><b>Business</b><p>Strategy & optimisation</p></div>
 <div><div class="num">02</div><b>Marketing</b><p>Digital, branding, leads</p></div>
 <div><div class="num">03</div><b>Digital & AI</b><p>Websites, automation, AI</p></div>
 <div><div class="num">04</div><b>International</b><p>Cross-border connectivity</p></div>
 </div><p style="margin-top:12px;font-size:12.5px">Full 7 services incl. research, financial connectivity & platforms.</p><a class="learnmore" href="consultancy">More on Consultancy →</a></div>
-<div class="card reveal"><img class="top-img" src="assets/nagasaribu-associations-640.webp" width="400" height="400" alt="NAGASARIBU ASSOCIATION logo" loading="lazy" decoding="async"><div class="pill">LEADERSHIP • UNITY • INTEGRITY</div><h3>NAGASARIBU ASSOCIATION</h3><p>Business community — networking, connections & partnerships.</p><p style="margin-top:10px"><b>BERUSAHA FISABILILLAH, BERJAYA BIIZNILLAH</b></p><div class="price" style="margin-top:10px">RM300 <small>/ year</small></div><div style="margin-top:12px"><a class="btn btn-gold" href="#contact" data-service="Membership">JOIN ASSOCIATION</a></div><a class="learnmore" href="association">More on Association →</a></div>
+<div class="card reveal"><div class="emblem"><img src="assets/nagasaribu-association-icon-440.webp" width="220" height="132" alt="NAGASARIBU ASSOCIATION emblem" loading="lazy" decoding="async"></div><div class="pill">LEADERSHIP • UNITY • INTEGRITY</div><h3>NAGASARIBU ASSOCIATION</h3><p>Business community — networking, connections & partnerships.</p><p style="margin-top:10px"><b>BERUSAHA FISABILILLAH, BERJAYA BIIZNILLAH</b></p><div class="price" style="margin-top:10px">RM300 <small>/ year</small></div><div style="margin-top:12px"><a class="btn btn-gold" href="#contact" data-service="Membership">JOIN ASSOCIATION</a></div><a class="learnmore" href="association">More on Association →</a></div>
 </div></div></section>
 
 <section id="finance" class="dark" aria-labelledby="finance-title"><div class="wrap reveal">
