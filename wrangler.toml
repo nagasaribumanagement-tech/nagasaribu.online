@@ -1,0 +1,8 @@
+name = "nagasaribu-online"
+compatibility_date = "2026-10-19"
+
+# Pure static site — no framework, no bundler, no build step.
+# Cloudflare serves the files in this directory directly as Worker static assets.
+[assets]
+directory = "./nagasaribu-website-v2"
+not_found_handling = "404-page"

@@ -1,0 +1,15 @@
+# dependencies
+node_modules/
+
+# cloudflare / wrangler local state
+.wrangler/
+.dev.vars
+
+# secrets — must never be committed
+.env
+.env.*
+*.secrets.env
+
+# os junk
+.DS_Store
+Thumbs.db
