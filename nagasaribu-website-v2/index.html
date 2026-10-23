@@ -287,19 +287,28 @@ document.querySelectorAll('[data-service]').forEach(function(a){
 });
 var q=new URLSearchParams(location.search).get('service');
 if(q){preselect(q,false);var c=document.getElementById('contact');if(c&&location.hash==='#contact'){/* anchor handled by browser */}}
-document.getElementById('enquiryForm').addEventListener('submit',async function(e){
+var form=document.getElementById('enquiryForm');
+form.addEventListener('submit',async function(e){
 e.preventDefault();
-const btn=document.getElementById('enquiryBtn'),st=document.getElementById('enquiryStatus');
-btn.disabled=true;btn.textContent='SENDING...';st.textContent='';
+if(form.dataset.busy==='1')return;
+var btn=document.getElementById('enquiryBtn'),st=document.getElementById('enquiryStatus');
+form.dataset.busy='1';btn.disabled=true;btn.textContent='SENDING...';st.textContent='';
+var ctl=new AbortController(),timer=setTimeout(function(){ctl.abort()},30000);
 try{
-const res=await fetch(this.action,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(this)))});
-if(!res.ok)throw new Error('send failed');
-st.style.color='green';st.textContent='Terima kasih! Enquiry anda telah dihantar ke sales@nagasaribu.online. Kami akan balas via email.';
-this.reset();
+var res=await fetch(form.action,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(form))),signal:ctl.signal});
+var data=null;
+try{data=await res.json()}catch(_){}
+if(!(res.ok&&data&&String(data.success)==='true'))throw new Error((data&&data.message)||('HTTP '+res.status));
+st.style.color='#0a7d3f';st.textContent='Terima kasih! Enquiry anda telah dihantar ke sales@nagasaribu.online. Kami akan balas via email.';
+form.reset();
 }catch(err){
-st.style.color='#b00';st.textContent='Hantaran gagal. Sila email terus ke sales@nagasaribu.online';
+st.style.color='#b00';
+st.textContent='Hantaran gagal. Sila email terus ke sales@nagasaribu.online.';
+var a=document.createElement('a');a.href='mailto:sales@nagasaribu.online';a.textContent='sales@nagasaribu.online';a.style.color='#b00';a.style.fontWeight='700';
+st.textContent='Hantaran gagal. Sila email terus ke ';st.appendChild(a);st.appendChild(document.createTextNode('.'));
+}finally{
+clearTimeout(timer);form.dataset.busy='';btn.disabled=false;btn.textContent='SUBMIT ENQUIRY →';
 }
-btn.disabled=false;btn.textContent='SUBMIT ENQUIRY →';
 });
 })();
 </script>
